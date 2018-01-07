@@ -13,13 +13,15 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.schremser'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+mainClassName = "com.schremser.spring5webapp.Spring5WebappApplication"
 
 repositories {
 	mavenCentral()
