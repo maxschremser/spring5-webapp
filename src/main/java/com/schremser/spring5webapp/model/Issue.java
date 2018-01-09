@@ -2,6 +2,7 @@ package com.schremser.spring5webapp.model;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -93,12 +94,28 @@ public class Issue {
         return assignees;
     }
 
+    public String getAssigneesAsString() {
+        List<String> ass = new ArrayList<>();
+        assignees.forEach(assignee -> {
+            ass.add(assignee.getGithubUser());
+        });
+        return String.join(", ", ass);
+    }
+
     public void setAssignees(Set<Assignee> assignees) {
         this.assignees = assignees;
     }
 
     public Set<Label> getLabels() {
         return labels;
+    }
+
+    public String getLabelsAsString() {
+        List<String> labs = new ArrayList<>();
+        labels.forEach(label -> {
+            labs.add(label.getLabel());
+        });
+        return String.join(", ", labs);
     }
 
     public void setLabels(Set<Label> labels) {

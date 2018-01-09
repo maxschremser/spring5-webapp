@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Issues</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+</head>
+<body>
+<div th:each="issue : ${issues}">
+    <div class="row">
+        <div class="col-4" th:text="${issue.title}"></div>
+    </div>
+    <div class="row">
+        <div class="col-4" th:text="${issue.assigneesAsString}"></div>
+    </div>
+    <div class="row">
+        <div class="col-4" th:text="${issue.comment}"></div>
+    </div>
+</div>
+</body>
+</html>
